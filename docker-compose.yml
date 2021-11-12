@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  fastapi:
+    build: backend
+    ports:
+      - 8080:8080
+ 
+
+  frontend:
+    build: frontend
+    ports:
+      - 8501:8501
+    links:
+      - fastapi
+    depends_on: 
+      - fastapi  
+
+
